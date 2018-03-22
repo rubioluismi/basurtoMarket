@@ -1,0 +1,22 @@
+<p>
+  Listado de Jugadores
+</p>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Jugador</th>
+        <th>Puesto</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let fila of jugadores">
+      <tr id="{{fila.id}}">
+          <td>{{fila.nombre}}</td>
+          <td>{{fila.puesto}}</td>
+          <td>{{fila.fechaNacimiento}}</td>          
+        </tr>
+    </tbody>
+  </table>
+</div>
