@@ -1,23 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ListadoJugadoresComponent } from './listado-jugadores/listado-jugadores.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { InsertarComponent } from './insertar/insertar.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
+  ],
   declarations: [
     AppComponent,
     HeaderComponent,
     ListadoJugadoresComponent,
-    FooterComponent
-  ],
-  imports: [
-    HttpClientModule,
-    BrowserModule
+    FooterComponent,
+    InsertarComponent,
+    HomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

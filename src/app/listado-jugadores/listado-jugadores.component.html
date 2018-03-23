@@ -1,22 +1,30 @@
-<p>
-  Listado de Jugadores
-</p>
+<div class="componente-listado">
+  <div class="cablist">
+    <img src="../assets/jugadors_mini1.png">
+    
+    Listado de Jugadores
+    
+  </div>
 
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Jugador</th>
-        <th>Puesto</th>
-        <th>Edad</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let fila of jugadores">
-      <tr id="{{fila.id}}">
-          <td>{{fila.nombre}}</td>
-          <td>{{fila.puesto}}</td>
-          <td>{{fila.fechaNacimiento}}</td>          
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Jugador</th>
+          <th>Puesto</th>
+          <th>Edad</th>
+          <th>Club</th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody *ngFor="let fila of jugadores">
+        <tr id="{{fila.id}}">
+            <td>{{fila.nombre}}</td>
+            <td>{{fila.puesto}}</td>
+            <td>{{fila.fechaNacimiento}}</td>
+            <td>{{fila.club}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+

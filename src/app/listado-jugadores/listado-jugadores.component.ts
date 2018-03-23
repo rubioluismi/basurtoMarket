@@ -1,5 +1,5 @@
 import { ListadoJugadoresServicio } from './../servicios/listado-jugadores-servicio';
-import { Jugadores } from './../modelo/jugadores.modelo';
+import { JugadoresDTO } from './../modelo/JugadoresDTO.modelo';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListadoJugadoresComponent implements OnInit {
   public status: string;
   public errores: string;
-  public jugadores: Jugadores[];
+  public jugadores: JugadoresDTO[];
 
   constructor(
     private _listadoJugadoresServicio: ListadoJugadoresServicio

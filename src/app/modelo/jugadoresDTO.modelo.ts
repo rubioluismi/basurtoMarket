@@ -1,10 +1,9 @@
-export class Jugadores {
-    constructor(
+export class JugadoresDTO {
+    constructor (
         public id: number,
         public nombre: string,
         public puesto: string,
         public fechaNacimiento: string,
-        public enlace: string,
-        public club: string,
+        public club: string
     ) {}
 }
