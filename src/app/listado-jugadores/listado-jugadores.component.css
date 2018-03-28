@@ -1,7 +1,12 @@
 .cablist{
+    font-size: 18px;
     padding: 10px;
 }
 
 .componente-listado {
     background-image: url("../../assets/background.jpg");
+}
+
+table {
+    font-size: 16px;
 }

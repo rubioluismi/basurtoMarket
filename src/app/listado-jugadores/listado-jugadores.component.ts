@@ -20,6 +20,7 @@ export class ListadoJugadoresComponent implements OnInit {
   ngOnInit() {
     this.getListado();
     console.log('Carga el Compoenente Listado Bien');
+    this.mostrarOcultarTituloAvtivo();
   }
   getListado() {
     /* 	Llamamos al servicio, usamos subscribe para capturar todo, errores
@@ -29,7 +30,7 @@ export class ListadoJugadoresComponent implements OnInit {
     this._listadoJugadoresServicio.getListado().subscribe(
       resultado => {  this.jugadores = resultado.data,
                       this.status = resultado.status;
-
+          this.controlFilas();
       } // Cierre de resultado
       , error => { this.errores = <any>error;
         if (this.errores !== null) {
@@ -40,4 +41,20 @@ export class ListadoJugadoresComponent implements OnInit {
 
     );
   }// Cierre de getListado
+
+  mostrarOcultarTituloAvtivo() {
+    $('.listado li').removeClass('active');
+    $('.listado').addClass('active');
+  }
+
+  controlFilas()  {
+    $('.fila').hover(
+      function() {
+        $(this.id).addClass('	glyphicon glyphicon-pencil');
+      },
+      function() {
+        $(this.id).removeClass('	glyphicon glyphicon-pencil');
+      }
+  );
+  }
 }

@@ -1,0 +1,37 @@
+#cuerpo{
+    padding: 10px;
+}
+
+form{
+    padding: 5px;
+}
+
+label {
+    font-size: 12px;
+}
+
+.componente-insertar{
+    background-image: url("../../assets/background.jpg");
+    padding: 3% !important;
+}
+
+.guardado {
+    align-content: center
+}
+
+span {
+    color: red;
+}
+
+:disabled {
+    cursor: not-allowed;
+}
+
+input, select{
+    font-size: 12px;
+    width: 80%;
+}
+
+label {
+    font-size: 14px;
+}

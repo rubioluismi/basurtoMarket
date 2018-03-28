@@ -6,8 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/listado', pathMatch: 'full' },
+  { path: '#', redirectTo: '/listado', pathMatch: 'full' },
+  { path: 'home', redirectTo: '/listado', pathMatch: 'full' },
   { path: 'listado', component: ListadoJugadoresComponent },
   { path: 'insertar', component: InsertarComponent }
 ];

@@ -1,9 +1,40 @@
-<section id="cuerpo">
-    <h3>Nuevo Jugador:</h3>
-    <form #frm_Nuevo="ngForm" (ngSubmit)="onSubmit();">
-      <label>Nombre</label>
-      <!--<input type="text" #judadores="ngForm" ngControl="nombre" 
-        [(ngModel)]="jugadores.nombre" required pattern="[A-Z a-z0-9]" maxlength="250" />
-        <span *ngIf="!modelo.valid">Nombre no válido</span>-->
-    </form>
+<section id="cuerpo" class="componente-insertar">
+     <h3>Nuevo Jugador:</h3> 
+    <form id="nuevoJForm" #frm_Nuevo="ngForm" (ngSubmit)="onSubmit();"> 
+        <label class="col-md-1">Nombre</label>
+        <div class="col-md-3">
+            <input [(ngModel)]="jugadores.nombre" name="nombre" required pattern="[A-Z a-z0-9ñÑáéíóúÁÉÍÓÚ\s]*" #nombre="ngModel"/> 
+            <span *ngIf="!nombre.valid" class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" title="Nombre no válido"></span> 
+        </div>
+        <br><br>
+        <label  class="col-md-1">Puesto</label>
+        <div class="col-md-3">
+            <select [(ngModel)]="jugadores.puesto" name="puesto" #puesto="ngModel" required>
+                <option *ngFor="let pos of posicion" [value]="pos.id">{{pos.descripcion}}</option> 
+            </select>
+            <span *ngIf="!puesto.valid" class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" title="Puesto no válido"></span>
+        </div>
+        
+        <label  class="col-md-2">Fecha de Nacimiento</label>
+        <div class="col-md-3">
+            <input type="text" [(ngModel)]="jugadores.fechaNacimiento"
+                name="fecha" ngModel required pattern="[A-Z a-z0-9/-]*" maxlength="250" #fecha="ngModel"/>
+            <span *ngIf="!fecha.valid" class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" title="Fecha no válida"></span>
+        </div>
+        <br><br>
+
+        <label  class="col-md-1">Enlace</label>
+        <div class="col-md-3">
+            <input type="text"  [(ngModel)]="jugadores.enlace" name="enlace" ngModel required pattern="[A-Z a-z0-9ñÑáéíóúÁÉÍÓÚ\s/-_\-:.]*" maxlength="250" #enlace="ngModel"/>
+            <span *ngIf="!enlace.valid" class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" title="Fecha no válida"></span>
+        </div>
+        <label  class="col-md-2">Club</label>
+        <div class="col-md-3">
+            <input type="text" [(ngModel)]="jugadores.club" name="club" ngModel required  maxlength="250" #club="ngModel" />
+            <span *ngIf="!club.valid" class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" title="Club no válido"></span> 
+        </div>
+        <br><br>
+        <button id="guardado" class="guardado col-md-2" type="submit"
+            [disabled]="!frm_Nuevo.valid" >Guardar Jugador </button>
+    </form> 
 </section>

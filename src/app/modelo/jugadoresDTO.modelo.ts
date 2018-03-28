@@ -4,6 +4,7 @@ export class JugadoresDTO {
         public nombre: string,
         public puesto: string,
         public fechaNacimiento: string,
-        public club: string
+        public club: string,
+        public enlace: string
     ) {}
 }
